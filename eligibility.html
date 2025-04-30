@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loan Eligibility</title>
+    <!-- Font Awesome CDN -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            background: linear-gradient(120deg, #ffffff73, #ff00dd1e);
+            color: #fff;
+            overflow: hidden;
+            padding-top: 60px; /* Adjusted for header */
+        }
+
+        /* Main Content Styling */
+        .content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        /* Popup Styling */
+        .popup {
+            max-width: 600px;
+            width: 100%;
+            margin: 20px;
+            padding: 20px;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            animation: popup-scale 2s infinite alternate;
+        }
+
+        .popup .icon {
+            font-size: 4rem;
+            color: #1A5CE0;
+            animation: icon-scale 2s infinite alternate;
+        }
+
+        h1 {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+            color: #1A5CE0;
+        }
+
+        .eligible {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #000000;
+            margin: 10px 0;
+        }
+
+        .message {
+            font-size: 1rem;
+            color: #000000;
+        }
+
+        /* Contact Buttons Styling */
+        .contact-buttons {
+            margin-top: 20px;
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap; /* Ensures buttons stack on mobile */
+        }
+
+        .button {
+            text-decoration: none;
+            font-size: 1rem;
+            color: rgb(255, 255, 255);
+            padding: 10px 20px;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: transform 0.3s, background-color 0.3s;
+            margin: 5px;
+        }
+
+        .call-button {
+            background: #25D366;
+        }
+
+        .whatsapp-button {
+            background: #25D366;
+        }
+
+        .button:hover {
+            transform: scale(1.1);
+            background-color: #1A5CE0;
+        }
+
+        .button i {
+            font-size: 1.2rem;
+        }
+
+        /* Animations */
+        @keyframes popup-scale {
+            0% {
+                transform: scale(1);
+            }
+            100% {
+                transform: scale(1.05);
+            }
+        }
+
+        @keyframes icon-scale {
+            0% {
+                transform: scale(1);
+            }
+            100% {
+                transform: scale(1.2);
+            }
+        }
+
+        /* Media Queries for Responsiveness */
+        @media (max-width: 768px) {
+            .header {
+                padding: 10px;
+                flex-direction: row;
+                justify-content: space-between;
+            }
+
+            .logo {
+                font-size: 1.1rem;
+                flex-grow: 0;
+            }
+
+            .popup {
+                max-width: 90%;
+                margin-top: 30px;
+                padding: 15px;
+            }
+
+            .popup .icon {
+                font-size: 3rem;
+            }
+
+            h1 {
+                font-size: 1.5rem;
+            }
+
+            .eligible {
+                font-size: 1.1rem;
+            }
+
+            .contact-buttons {
+                flex-direction: row;
+                gap: 20px;
+            }
+
+            .button {
+                width: auto;
+                text-align: center;
+            }
+        }
+
+        /* Small Mobile Screens */
+        @media (max-width: 480px) {
+            .popup .icon {
+                font-size: 2.5rem;
+            }
+
+            h1 {
+                font-size: 1.3rem;
+            }
+
+            .eligible {
+                font-size: 1rem;
+            }
+        }
+        body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f0f8ff;
+  color: #333;
+}
+
+.header {
+  background-color: #ffffff;
+  padding: 1px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.menu-icon, .profile-icon {
+  font-size: 25px;
+  color: #e0df1a
+}
+
+.logo img {
+  height: 50px;
+  padding: -4px;
+}
+.banner {
+  width: 100%;
+  display: block;
+  height: auto;
+}
+
+main {
+  padding: 2rem;
+}
+.product-image {
+  width: 186px;
+  height: 148px;
+  margin: 0px 0;
+  border-radius: 20px;
+}
+    </style>
+</head>
+<body>
+    <!-- Header -->
+  <div class="header">
+    <div class="menu-icon"><i class="fas fa-bars"></i></div>
+    <div class="logo"><img src="logo.png" alt="img 1"></div>
+    <div class="profile-icon"><i class="fas fa-user-circle"></i></div>
+</div>
+
+    <!-- Main Content -->
+    <div class="content">
+        <div class="popup">
+            <!-- Animated Right Tick Icon -->
+            <i class="fas fa-check-circle icon"></i>
+            <!-- Static Box Below Icon -->
+            <div class="popup-content">
+                <img src="https://media.istockphoto.com/id/1502311577/vector/3d-id-card-vector-person-employee-staff-document-passport-credentials-customer-identity-badge.jpg?s=612x612&w=0&k=20&c=fY8kvoSw7rmwvheawbwiA9MACCnDIanMZmn3vwbQyiw=" alt="Varification Tick" class="product-image">
+                <h1>🎉 Congratulations! 🎉</h1>
+                <p class="eligible">आपकी आईडी कार्ड सफलतापूर्वक बन गई है नीचे व्हाट्सएप पर मैसेज करके अपनी आईडी प्राप्त करें</p>
+                <p class="message">👇 Contact our team 👇</p>
+            </div>
+        </div>
+        <!-- Contact Buttons -->
+        <div class="contact-buttons">
+            <a href="https://wa.me/+918931942829?text=id%20card%20-%20%23343%20KYC%20complete%20ho%20gai%20hai%20ID%20card%20chahiye%20sir
+            " target="_blank" class="button whatsapp-button">
+                <i class="fab fa-whatsapp"></i> WhatsApp
+            </a>
+        </div>
+    </div>
+</body>
+</html>
